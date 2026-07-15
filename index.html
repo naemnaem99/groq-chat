@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Groq 챗봇</title>
+</head>
+<body>
+  <!-- 대화(질문+답변)가 하나씩 쌓이는 자리. 처음엔 비어있어서 안 보임 -->
+  <div id="chat-container"></div>
+
+  <!-- 입력창 + 버튼. 처음엔 화면 중앙, 대화 시작하면 하단으로 이동 -->
+  <div id="input-bar">
+    <p id="intro">무엇이든 물어보세요</p>
+    <div id="input-row">
+      <textarea id="q" placeholder="물어보기" rows="1"></textarea>
+      <button id="btn">보내기</button>
+    </div>
+  </div>
+
+  <!-- 동작(JS)은 app.js 로 분리해 불러오기 -->
+  <script src="app.js"></script>
+</body>
+</html>
