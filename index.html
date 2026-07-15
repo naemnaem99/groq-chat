@@ -7,11 +7,32 @@
   <title>Groq 챗봇</title>
 </head>
 <body>
+  <!-- 배경 위를 걸어 지나가는 검은색 픽셀 몬스터 (장식용, 스크린리더에는 노출 안 함) -->
+  <div class="pixel-monster" aria-hidden="true">
+    <span class="pixel-frame pixel-frame-a"></span>
+    <span class="pixel-frame pixel-frame-b"></span>
+  </div>
+
   <!-- 대화(질문+답변)가 하나씩 쌓이는 자리. 처음엔 비어있어서 안 보임 -->
   <div id="chat-container"></div>
 
   <!-- 입력창 + 버튼. 처음엔 화면 중앙, 대화 시작하면 하단으로 이동 -->
   <div id="input-bar">
+    <!-- 채팅 시작 후 input-bar 테두리 우측에 가만히 서있는 몬스터 3마리 (장식용) -->
+    <div class="chat-monsters" aria-hidden="true">
+      <div class="pixel-monster-static">
+        <span class="pixel-frame pixel-frame-a"></span>
+        <span class="pixel-frame pixel-frame-b"></span>
+      </div>
+      <div class="pixel-monster-static">
+        <span class="pixel-frame pixel-frame-a"></span>
+        <span class="pixel-frame pixel-frame-b"></span>
+      </div>
+      <div class="pixel-monster-static">
+        <span class="pixel-frame pixel-frame-a"></span>
+        <span class="pixel-frame pixel-frame-b"></span>
+      </div>
+    </div>
     <p id="intro">무엇이든 물어보세요</p>
     <div id="input-row">
       <textarea id="q" placeholder="물어보기" rows="1"></textarea>

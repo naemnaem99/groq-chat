@@ -1,6 +1,22 @@
 const chatContainer = document.getElementById('chat-container')
 const input = document.getElementById('q')
 
+// 픽셀 몬스터를 intro 문구 상단에 놓고, 텍스트 너비만큼만 좌우로 왕복하게 맞춤
+const introEl = document.getElementById('intro')
+const monsterEl = document.querySelector('.pixel-monster')
+const MONSTER_GAP = 8 // 몬스터와 텍스트 사이 여백(px)
+function alignMonster() {
+  const rect = introEl.getBoundingClientRect()
+  const monsterWidth = monsterEl.offsetWidth
+  const monsterHeight = monsterEl.offsetHeight
+
+  monsterEl.style.left = rect.left + 'px'
+  monsterEl.style.top = (rect.top - monsterHeight - MONSTER_GAP) + 'px'
+  monsterEl.style.setProperty('--walk-dist', Math.max(rect.width - monsterWidth, 0) + 'px')
+}
+window.addEventListener('resize', alignMonster)
+alignMonster()
+
 // 입력한 텍스트가 넘치면 인풋창 높이를 내용에 맞게 늘림
 function resizeInput() {
   input.style.height = 'auto'
